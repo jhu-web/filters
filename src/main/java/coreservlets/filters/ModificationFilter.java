@@ -29,6 +29,7 @@ public abstract class ModificationFilter implements Filter {
       doModification(responseWrapper.toString());
     PrintWriter out = response.getWriter();
     // Output the modified response
+    response.setContentLength(modifiedResponse.length());
     out.write(modifiedResponse);
   }
 
